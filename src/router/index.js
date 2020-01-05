@@ -1,29 +1,31 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import HomeList from '../views/HomeList.vue';
+import BugDetail from "../views/BugDetail.vue";
+import BugCreate from "../views/BugCreate.vue";
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/About.vue')
-    }
-  }
-]
-
 const router = new VueRouter({
-  routes
+  mode: "history", // gets rid of the hash in the URL!!! 
+  routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: HomeList
+    },
+    {
+      path: '/bugdetail/:id',
+      name: 'bug-detail',
+      component: BugDetail,
+      props: true
+    },
+    {
+      path: '/create',
+      name: 'bug-create',
+      component: BugCreate
+    }
+  ]
 })
 
 export default router
