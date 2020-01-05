@@ -1,10 +1,12 @@
 <template>
   <router-link class="bug-link" :to="{ name: 'bug-detail', params: { id: '1' } }">
-    <div class="bug-card -shadow container">
+    <div class="bug-card -shadow">
       <span class="eyebrow">updated @{{ bug.updatedAt }}, created on {{ bug.createdAt }}</span>
       <h4 class="title">{{ bug.title }}</h4>
-      <div class="col-6">reporter: {{ bug.reportedBy }}</div>
-      <div class="col-6">{{ bug.notes.length }} notes</div>
+      <base-icon name="user">reporter: {{ bug.reportedBy }}</base-icon>
+      <div>
+        <base-icon name="book">{{ bug.notes ? bug.notes.length : 0 }} notes</base-icon>
+      </div>
     </div>
   </router-link>
 </template>

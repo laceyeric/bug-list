@@ -8,6 +8,8 @@
 
 <script>
 import BugCard from "@/components/BugCard.vue";
+import axios from "axios";
+
 export default {
   components: {
     BugCard
