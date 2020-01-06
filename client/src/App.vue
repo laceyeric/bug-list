@@ -45,10 +45,6 @@ a {
   font-weight: 600;
   background-color: transparent;
 }
-img {
-  border-style: none;
-  /* width: 100%; */
-}
 h1,
 h2,
 h3,

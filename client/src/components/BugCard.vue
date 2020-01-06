@@ -1,5 +1,5 @@
 <template>
-  <router-link class="bug-link" :to="{ name: 'bug-detail', params: { id: '1' } }">
+  <router-link class="bug-link" :to="{ name: 'bug-detail', params: { id: bug.id } }">
     <div class="bug-card -shadow">
       <span class="eyebrow">updated @{{ bug.updatedAt }}, created on {{ bug.createdAt }}</span>
       <h4 class="title">{{ bug.title }}</h4>
@@ -13,9 +13,12 @@
 
 <script>
 export default {
+  props: {
+    bug: Object
+  },
   data() {
     return {
-      bug: {
+      fakeBug: {
         id: "1",
         closed: false,
         description: "The heart and soul...and details of the bug.",

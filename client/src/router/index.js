@@ -24,7 +24,16 @@ const router = new VueRouter({
       path: '/create',
       name: 'bug-create',
       component: BugCreate
-    }
+    },
+    {
+      path: '/notes/:id',
+      name: 'note-detail',
+      // component: Note
+    },
+    {
+      path: "*",
+      redirect: "/"
+    },
   ]
 })
 
